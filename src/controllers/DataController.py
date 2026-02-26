@@ -28,11 +28,11 @@ class DataController(BaseController):
 
         cleaned_filename = self.get_clean_filename(filename=filename)
 
-        new_filename = os.path.join(project_path,"_"+random_filename+"_"+cleaned_filename)
+        new_filename = os.path.join(project_path,random_filename+"_"+cleaned_filename)
 
         while os.path.exists(new_filename):
             random_filename =  self.generate_random_string()
-            new_filename = os.path.join(project_path,"_"+random_filename+"_"+cleaned_filename)
+            new_filename = os.path.join(project_path,random_filename+"_"+cleaned_filename)
         
         return new_filename, random_filename + "_" + cleaned_filename
     
